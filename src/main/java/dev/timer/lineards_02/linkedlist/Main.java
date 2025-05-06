@@ -71,21 +71,22 @@ class LinkedList {
     }
 
     // 연결 리스트에서 데이터 찾기
-    public void findData(int data) {
+    public boolean findData(int data) {
         if (this.isEmpty()) {
-            System.out.println("List is empty");
-            return;
+//            System.out.println("List is empty");
+//            return;
         }
 
         Node cur = this.head;
         while (cur != null) {
             if (cur.data == data) {
-                System.out.println("Data exist!");
-                return;
+//                System.out.println("Data exist!");
+                return true;
             }
             cur = cur.next;
         }
-        System.out.println("Data not found!");
+//        System.out.println("Data not found!");
+        return false;
     }
 
     // 연결 리스트의 모든 데이터 출력
