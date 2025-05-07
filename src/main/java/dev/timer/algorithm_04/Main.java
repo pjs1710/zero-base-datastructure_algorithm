@@ -1,4 +1,4 @@
-package dev.timer.algorithm_04.bubble_sort;
+package dev.timer.algorithm_04;
 
 import java.util.Arrays;
 
