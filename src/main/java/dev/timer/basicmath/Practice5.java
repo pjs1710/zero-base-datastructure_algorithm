@@ -1,4 +1,4 @@
-package dev.timer.practice;
+package dev.timer.basicmath;
 
 public class Practice5 {
 

@@ -1,4 +1,4 @@
-package dev.timer.practice;
+package dev.timer.basicmath;
 
 import java.util.HashSet;
 
