@@ -60,7 +60,7 @@ public class Practice1 {
     public static void solution(Integer[] data, int n) {
         BinarySearchTree bst = new BinarySearchTree(data[0]);
 
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 1; i < data.length; i++) {
             if (data[i] == null) {
                 continue;
             }
