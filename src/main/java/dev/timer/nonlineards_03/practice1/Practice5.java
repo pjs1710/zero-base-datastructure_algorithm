@@ -1,4 +1,4 @@
-package dev.timer.nonlineards_03.practice;
+package dev.timer.nonlineards_03.practice1;
 
 import java.util.HashSet;
 import java.util.LinkedList;
