@@ -73,6 +73,39 @@ public class Sort2 {
         arr[j] = temp;
     }
 
+    public static void quickSort(int[] arr, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+
+        int pivot = partition(arr, left, right);
+
+        quickSort(arr, left, pivot - 1); // 좌측 퀵 정렬
+        quickSort(arr, pivot + 1, right); // 우측 퀵 정렬
+    }
+
+    public static int partition(int[] arr, int left, int right) {
+
+        int pivot = arr[left];
+        int i = left;
+        int j = right;
+
+        while (i < j) {
+            while (arr[j] > pivot && i < j) {
+                j--;
+            }
+
+            while (arr[i] <= pivot && i < j) {
+                i++;
+            }
+
+            swap(arr, i, j);
+        }
+        swap(arr, left, i);
+
+        return i;
+    }
+
     public static void main(String[] args) {
         // Test Code
         int[] arr = {3, 5, 2, 7, 1, 4, 6};
@@ -83,5 +116,10 @@ public class Sort2 {
         // Test Code
         heapSort(arr);
         System.out.println("힙 정렬 : " + Arrays.toString(arr));
+
+        // Test Code
+        arr = new int[]{6, 2, 7, 9, 4, 5, 8};
+        quickSort(arr, 0, arr.length - 1);
+        System.out.println("퀵 정렬 : " + Arrays.toString(arr));
     }
 }
