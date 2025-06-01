@@ -81,6 +81,26 @@ public class Sort3 {
         }
     }
 
+    public static void shellSort(int[] arr) {
+        int gap = arr.length / 2;
+
+        for (int g = gap; g > 0; g /= 2) { // 4, 2, 1
+            for (int i = g; i < arr.length; i++) {
+                int tmp = arr[i];
+
+                int j = 0;
+                for (j = i - g; j >= 0; j -= g) {
+                    if (arr[j] > tmp) {
+                        arr[j + g] = arr[j];
+                    } else {
+                        break;
+                    }
+                }
+                arr[j + g] = tmp;
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         // Test Code
@@ -91,5 +111,9 @@ public class Sort3 {
         // Test Code
         countingSort(arr);
         System.out.println("계수 정렬 : " + Arrays.toString(arr));
+
+        // Test Code
+        shellSort(arr);
+        System.out.println("셸 정렬 : " + Arrays.toString(arr));
     }
 }
