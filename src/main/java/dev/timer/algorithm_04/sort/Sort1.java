@@ -1,8 +1,8 @@
-package dev.timer.algorithm_04;
+package dev.timer.algorithm_04.sort;
 
 import java.util.Arrays;
 
-public class Main {
+public class Sort1 {
 
     // 버블 정렬
     public static void bubbleSort(int[] arr) {
