@@ -1,6 +1,4 @@
-package dev.basic.ds.linkedlist;
-
-import java.util.Arrays;
+package dev.basic.ds.list;
 
 public class ArrayListMain {
 
