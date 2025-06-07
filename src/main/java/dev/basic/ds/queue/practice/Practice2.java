@@ -12,6 +12,10 @@ import java.util.Queue;
  * 사용자에게 1부터 N까지의 값을 입력 받습니다.
  * 한 라운드를 지날 때마다 값은 10배 증가하며, M의 값 이하의 값만 표출합니다.
  * 각 라운드의 숫자와 개수, 값을 출력합니다.
+ *
+ *  sol : 1 2 3 4 5 6 값을 넣고
+ *  poll 하면서 1 * 10한 value를 다시 offer 한다.
+ *  만약 value * 10한 값이 M보다 크다면 continue를 진행한다.
  */
 
 public class Practice2 {
