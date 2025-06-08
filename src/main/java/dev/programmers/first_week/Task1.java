@@ -39,7 +39,7 @@ public class Task1 {
         }
 
         int[] findArr = findArr(nums);
-        Arrays.stream(findArr).sorted();
+        Arrays.sort(findArr);
         System.out.println(Arrays.toString(findArr));
 
     }
