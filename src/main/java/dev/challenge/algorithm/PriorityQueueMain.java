@@ -31,7 +31,7 @@ class Point implements Comparable<Point> {
 public class PriorityQueueMain {
 
     public static void main(String[] args) {
-        PriorityQueue<Point> pq = new PriorityQueue<>();
+        PriorityQueue<Point> pq = new PriorityQueue<>(); // new PriorityQueue<>(Comparator.reverseOrder()); 하면 MaxHeap 구조로 출력
         pq.add(new Point(4, 5));
         pq.add(new Point(1, 2));
         pq.add(new Point(1, 3));
