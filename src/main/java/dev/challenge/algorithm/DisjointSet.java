@@ -15,24 +15,19 @@ class Order {
 
 public class DisjointSet {
     static int N, M;
-    static List<Set<Integer>> setLink;
+    static List<Integer> set;
     static List<Order> orders;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
-
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-
-        setLink = new ArrayList<>(Collections.nCopies(N + 1, null));
-
-        for (int n = 0; n <= N; n++) {
-            setLink.set(n, new HashSet<>());
-            setLink.get(n).add(n);
+        set = new ArrayList<>(Collections.nCopies(N + 1, 0));
+        for (int i = 0; i <= N; i++) {
+            set.set(i, i);
         }
-
         orders = new ArrayList<>();
         for (int m = 0; m < M; m++) {
             st = new StringTokenizer(br.readLine());
@@ -44,19 +39,29 @@ public class DisjointSet {
 
         for (Order o : orders) {
             if (o.op == 0) {
-                var setA = setLink.get(o.a);
-                var setB = setLink.get(o.b);
-                setA.addAll(setB);
-                for (Integer item : setA) {
-                    setLink.set(item, setA);
-                }
+                unionSet(o.a, o.b);
+                System.out.println(set);
             } else {
-                if (setLink.get(o.a).contains(o.b)) {
+                if (findSet(o.a) == findSet(o.b)) {
                     System.out.println("YES");
                 } else {
                     System.out.println("NO");
                 }
             }
         }
+    }
+
+    static int findSet(int a) {
+        int ret = set.get(a);
+        if (ret != a) {
+            ret = findSet(set.get(a));
+        }
+        return ret;
+    }
+
+    static void unionSet(int a, int b) {
+        a = findSet(a);
+        b = findSet(b);
+        set.set(b, a);
     }
 }
