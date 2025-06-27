@@ -52,11 +52,10 @@ public class DisjointSet {
     }
 
     static int findSet(int a) {
-        int ret = set.get(a);
-        if (ret != a) {
-            ret = findSet(set.get(a));
+        if (set.get(a) != a) {
+            set.set(a, findSet(set.get(a)));
         }
-        return ret;
+        return set.get(a);
     }
 
     static void unionSet(int a, int b) {
